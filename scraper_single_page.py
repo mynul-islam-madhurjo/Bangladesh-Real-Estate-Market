@@ -23,7 +23,7 @@ def main():
         soup = BeautifulSoup(driver.page_source, 'html.parser')
         property_listings = soup.find_all('li', {'role': 'article', 'class': 'ef447dde'})
         # print(property_listings)
-
+        names = []
         cities = []
         regions = []
         property_types = []
@@ -49,6 +49,7 @@ def main():
                     longitude = json_data['geo']['longitude']
 
                 property_types.append(json_data['@type'])
+                names.append(json_data['name'])
                 sizes.append(json_data['floorSize']['value'])
                 num_bedrooms_list.append(json_data['numberOfRooms']['value'])
                 num_bathrooms_list.append(json_data['numberOfBathroomsTotal'])
@@ -66,6 +67,7 @@ def main():
 
         # Create a dictionary from the lists
         data = {
+            'Name': names,
             'City': cities,
             'Region': regions,
             'Property Type': property_types,

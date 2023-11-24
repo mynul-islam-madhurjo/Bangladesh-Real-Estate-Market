@@ -34,6 +34,7 @@ def main():
                 print(f"No more listings found on page {page_number}. Exiting loop.")
                 break
 
+            names = []
             cities = []
             regions = []
             property_types = []
@@ -59,6 +60,7 @@ def main():
                         longitude = json_data['geo']['longitude']
 
                     property_types.append(json_data['@type'])
+                    names.append(json_data['name'])
                     sizes.append(json_data['floorSize']['value'])
                     num_bedrooms_list.append(json_data['numberOfRooms']['value'])
                     num_bathrooms_list.append(json_data['numberOfBathroomsTotal'])
@@ -83,6 +85,7 @@ def main():
 
                 # Store all extracted data in a dictionary
                 data = {
+                    'Name': names,
                     'City': cities,
                     'Region': regions,
                     'Property Type': property_types,

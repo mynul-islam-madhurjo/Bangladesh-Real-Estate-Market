@@ -3,3 +3,5 @@ Website to Scrape: https://www.bproperty.com/en/bangladesh/properties-for-rent/
 ChromeDriver Download URL: https://chromedriver.chromium.org/downloads
 
 Selenium Python Documentation: https://selenium-python.readthedocs.io/installation.html
+
+Tableau Dashboard: https://public.tableau.com/app/profile/mynul.islam/viz/BangladeshRealEstateMarket/Dashboard1?publish=yes
