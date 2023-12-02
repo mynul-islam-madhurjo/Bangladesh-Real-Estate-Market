@@ -4,16 +4,17 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import json
 
+
 # Function to convert lakh to numeric value
 def convert_lakh_to_numeric(value):
     if 'Lakh' in value:
         return float(value.replace(' Lakh', '').strip()) * 100000
     return int(value.replace(' Thousand', '').replace(',', '').strip()) * 1000
 
+
 def main():
     try:
         url = 'https://www.bproperty.com/en/bangladesh/properties-for-rent/'
-        webdriver_path = 'C:\Program Files (x86)\chromedriver-win64\chromedriver.exe'
 
         options = Options()
         options.add_argument('--headless')
@@ -82,10 +83,11 @@ def main():
         df = pd.DataFrame(data)
 
         # Export the DataFrame to a CSV file
-        df.to_csv('property_details.csv', index=False)
+        df.to_csv('Data/property_details.csv', index=False)
 
     except Exception as e:
         print(f"Error opening URL: {e}")
+
 
 if __name__ == "__main__":
     main()

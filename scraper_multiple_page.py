@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import json
 import requests
 
+
 # Function to convert lakh to numeric value
 def convert_lakh_to_numeric(value):
     if 'Lakh' in value:
@@ -13,6 +14,7 @@ def convert_lakh_to_numeric(value):
         return int(float(value.replace(',', '').strip()))  # Convert to float, then to int
     else:
         return int(value.replace(',', '').strip()) * 1000
+
 
 def main():
     try:
@@ -105,12 +107,13 @@ def main():
         if data_list:
             final_data = {key: sum([d.get(key, []) for d in data_list], []) for key in data_list[0].keys()}
             df = pd.DataFrame(final_data)
-            df.to_csv('property_details.csv', index=False)
+            df.to_csv('Data/property_details.csv', index=False)
         else:
             print("No data collected. Something went wrong.")
 
     except Exception as e:
         print(f"Error opening URL: {e}")
+
 
 if __name__ == "__main__":
     main()

@@ -33,12 +33,11 @@ source venv/bin/activate
 ```bash
 pip install -r requirements.txt
 ```
-4. Download Chrome WebDrive from https://chromedriver.chromium.org/downloads 
-5. Run the scraper
+4. Run the scraper
 ```bash
-python selenium_scraper/scraper.py --chromedriver_path <path_to_chromedriver>
+python scraper_multiple_page.py 
 ```
-6. You will get a file named `property_details.csv` containing all the required fields.
+5. You will get a file named `property_details.csv` containing all the required fields in the Data.
 
 ## Conclusion
 The analysis sheds light on the significant price differences between different regions and property types in Bangladesh, particularly Dhaka and Chittagong. These insights can be valuable for real estate professionals, investors, and individuals interested in property markets in Bangladesh.
